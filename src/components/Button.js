@@ -6,8 +6,8 @@ class Button extends Component {
   // static adds a property to the class itself
   // static contextType = LanguageContext;
 
-  renderSubmit(value) {
-    return value === 'english' ? 'Submit' : '送信';
+  renderSubmit(language) {
+    return language === 'english' ? 'Submit' : '送信';
   }
 
   renderButton(color) {
@@ -16,7 +16,7 @@ class Button extends Component {
         {/* {text} */}
         <LanguageContext.Consumer>
           {/* Function is automatically called by the consumer */}
-          {(value) => this.renderSubmit(value)}
+          {({ language }) => this.renderSubmit(language)}
         </LanguageContext.Consumer>
       </button>
     );
